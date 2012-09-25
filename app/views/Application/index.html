@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+#{set title:'Devoxx mobile' /}
+
+<div data-role="page">
+	<div data-role="header">
+		<h1>Devoxx 2012</h1>
+	</div>
+	<div data-role="content">
+		<ul data-role="listview">
+			<li><a href="@{Application.scheduleOfDay(1)}">Monday November 12</a></li>
+			<li><a href="@{Application.scheduleOfDay(2)}">Tuesday November 13</a></li>
+			<li><a href="@{Application.scheduleOfDay(3)}">Wednesday November 14</a></li>
+			<li><a href="@{Application.scheduleOfDay(4)}">Thursday November 15</a></li>
+			<li><a href="@{Application.scheduleOfDay(5)}">Friday November 16</a></li>
+		</ul>
+	</div>
+</div>
