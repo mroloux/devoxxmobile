@@ -9,6 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         #{get 'moreStyles' /}
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function(){
+                $.mobile.defaultPageTransition = "slide";
+            });
+        </script>
         <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
         <script src="@{'/public/javascripts/lib/moment.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
