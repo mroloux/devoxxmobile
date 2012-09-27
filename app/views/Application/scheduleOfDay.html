@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Devoxx mobile' /}
 
-<div data-role="page" data-add-back-btn="true">
+<div data-role="page">
 	<div data-role="header" data-position="fixed">
         <a data-rel="back">Back</a>
 		<h1>Day ${day}</h1>
@@ -12,9 +12,11 @@
             <li data-role="list-divider">${_.getKey().fromTime.format('HH:mm')} - ${_.getKey().toTime.format('HH:mm')}</li>
             #{list _.getValue()}
                     <li>
-                        <div>${_.title}</div>
-                        <div class="ui-li-aside ui-li-desc">${_.type} - ${_.room}</div>
-                        <div class="ui-li-desc"></div>
+                        <a href="@{Application.talk(_.uri)}">
+                            <h3>${_.title}</h3>
+                            <div class="ui-li-aside ui-li-desc">${_.room}</div>
+                            <div class="ui-li-desc">${_.type}</div>
+                        </a>
                     </li>
             #{/list}
         #{/list}

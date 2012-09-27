@@ -3,7 +3,6 @@ package controllers;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableListMultimap;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Multimaps;
 import com.google.common.collect.Ordering;
 import com.google.gson.Gson;
@@ -26,6 +25,15 @@ public class Application extends Controller {
 
     public static void index() {
         render();
+    }
+
+    public static void talk(String uri) {
+        Map<String, String> talk = getTalk(uri);
+        render(talk);
+    }
+
+    private static Map<String, String> getTalk(String uri) {
+        return (Map<String, String>) new Gson().fromJson(WS.url(uri).get().getString(), Object.class);
     }
 
     public static void scheduleOfDay(String day) throws IOException {

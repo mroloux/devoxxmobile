@@ -11,7 +11,8 @@ public class Talk {
     public Date fromTime;
     public Date toTime;
     public String room;
-    private String type;
+    public String type;
+    public String uri;
 
     public Talk(Map<String, String> talkAsMap) {
         this.fromTime = parseDate(talkAsMap.get("fromTime"));
@@ -19,6 +20,7 @@ public class Talk {
         this.title = talkAsMap.get("title");
         this.room = talkAsMap.get("room");
         this.type = talkAsMap.get("type");
+        this.uri = talkAsMap.get("presentationUri");
     }
 
     private Date parseDate(String strDate)  {
