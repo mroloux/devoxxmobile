@@ -10,6 +10,11 @@
         <p>${talk.summary}</p>
         <p><b>Room:</b> ${talk.room}</p>
         <p><b>Type:</b> ${talk.type}</p>
-        <p><b>Speakers:</b> #{list talk.speakers}${_.speaker}${_isLast ? '' : ', ' }#{/list}</p>
+        <p>
+            <b>Speakers:</b>
+            #{list talk.speakers}
+                ${_.speaker}${_isLast ? '' : ', ' }
+            #{/list}
+        </p>
     </div>
 </div>

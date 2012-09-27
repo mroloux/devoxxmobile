@@ -7,7 +7,7 @@
 		<h1>Day ${day}</h1>
 	</div>
     <div data-role="content">
-        <ul data-role="listview" data-inset="true">
+        <ul data-role="listview">
         #{list talkGroups.asMap().entrySet()}
             <li data-role="list-divider">${_.getKey().fromTime.format('HH:mm')} - ${_.getKey().toTime.format('HH:mm')}</li>
             #{list _.getValue()}
